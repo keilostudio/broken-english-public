@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Broken English — Parler anglais, pour de vrai</title>
+    <title>Broken English — Parle, même mal</title>
     <meta
       name="description"
-      content="Broken English est une application qui t'entraîne à parler anglais à voix haute. L'app coach ta prononciation et ta fluidité en situation réelle."
+      content="Broken English te met en situation et te fait répondre à voix haute en anglais. Chaque phrase est marquée : dit, à moitié, manqué. Ta voix ne quitte jamais ton téléphone."
     />
-    <meta property="og:title" content="Broken English — Parler anglais, pour de vrai" />
+    <meta property="og:title" content="Broken English — Parle, même mal" />
     <meta
       property="og:description"
-      content="Broken English est une application qui t'entraîne à parler anglais à voix haute. L'app coach ta prononciation et ta fluidité en situation réelle."
+      content="Broken English te met en situation et te fait répondre à voix haute en anglais. Chaque phrase est marquée : dit, à moitié, manqué. Ta voix ne quitte jamais ton téléphone."
     />
     <meta property="og:url" content="https://brokenenglish.app/" />
     <meta property="og:type" content="website" />
@@ -20,24 +20,32 @@
     <style>
       :root {
         color-scheme: light dark;
-        --bg: #fdfaf8;
-        --surface: #ffffff;
-        --text: #1c1917;
-        --muted: #6b6360;
-        --line: #e7e0dc;
-        --accent: #ca6141;
-        --accent-soft: #fdefe9;
+
+        --paper: #edefe9;
+        --ink: #191d18;
+        --ink-dim: #6a7168;
+        --rule: #d5d9cf;
+
+        --said: #2e7d55;
+        --half: #b4801f;
+        --miss: #cf3b2a;
+
+        --serif: ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia,
+          'Times New Roman', serif;
+        --mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+          monospace;
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #16130f;
-          --surface: #1f1b17;
-          --text: #f2ede9;
-          --muted: #a89f99;
-          --line: #332d28;
-          --accent: #e7834c;
-          --accent-soft: #2a201a;
+          --paper: #131611;
+          --ink: #e9ebe4;
+          --ink-dim: #868d83;
+          --rule: #2a2e27;
+
+          --said: #5fbf8b;
+          --half: #d9a441;
+          --miss: #e8614d;
         }
       }
 
@@ -45,133 +53,292 @@
         box-sizing: border-box;
       }
 
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica,
-          Arial, sans-serif;
-        font-size: 17px;
-        line-height: 1.65;
+      html {
         -webkit-text-size-adjust: 100%;
       }
 
-      .wrap {
-        max-width: 46rem;
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: 17px;
+        line-height: 1.6;
+        font-synthesis-weight: none;
+      }
+
+      main {
+        max-width: 40rem;
         margin: 0 auto;
-        padding: 3rem 1.25rem 5rem;
+        padding: clamp(3rem, 12vh, 8rem) 1.5rem 3rem;
       }
 
-      header {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
+      /* ---- the apparatus: everything the machine says, in mono ---- */
 
-      .eyebrow {
+      .label {
+        font-family: var(--mono);
+        font-size: 0.6875rem;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        letter-spacing: 0.09em;
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: var(--accent);
-        margin: 0 0 0.75rem;
+        color: var(--ink-dim);
+        margin: 0;
       }
 
-      h1 {
-        font-size: clamp(1.9rem, 5vw, 2.6rem);
-        line-height: 1.15;
-        letter-spacing: -0.02em;
-        margin: 0 0 1.25rem;
+      .masthead {
+        margin-bottom: clamp(4rem, 14vh, 7rem);
       }
 
-      .lede {
-        color: var(--muted);
-        font-size: 1.05rem;
-        margin: 0 0 1.75rem;
+      .context {
+        margin-bottom: 1.5rem;
       }
 
-      .content {
-        margin: 2rem 0;
+      /* ---- the utterance: what a person says, in serif ---- */
+
+      .utterance {
+        font-size: clamp(2rem, 7.5vw, 3.4rem);
+        line-height: 1.22;
+        letter-spacing: -0.022em;
+        margin: 0;
+        text-wrap: balance;
       }
 
-      .content p {
-        margin: 1rem 0;
+      .chunk {
+        display: inline-block;
+        position: relative;
       }
 
-      .cta {
-        background: var(--accent-soft);
-        border-left: 3px solid var(--accent);
-        border-radius: 0 8px 8px 0;
-        padding: 1.5rem 1.25rem;
-        margin: 2rem 0;
-        text-align: center;
+      .chunk::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.14em;
+        height: 0.055em;
+        min-height: 2px;
+        background: var(--tone);
+        transform: scaleX(0);
+        transform-origin: left center;
+        animation: mark 0.42s cubic-bezier(0.32, 0.72, 0.3, 1) forwards;
+        animation-delay: calc(0.45s + var(--i) * 0.34s);
       }
 
-      .cta p {
-        margin: 0.5rem 0;
-        font-size: 1.1rem;
+      .chunk.is-half::after {
+        /* half-said: the mark breaks up, like the sound did */
+        background: repeating-linear-gradient(
+          to right,
+          var(--tone) 0 0.36em,
+          transparent 0.36em 0.62em
+        );
       }
 
-      a {
-        color: var(--accent);
-        text-decoration-thickness: 1px;
-        text-underline-offset: 2px;
+      .said {
+        --tone: var(--said);
       }
+      .half {
+        --tone: var(--half);
+      }
+      .miss {
+        --tone: var(--miss);
+      }
+
+      @keyframes mark {
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      /* ---- legend ---- */
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        margin: 2.5rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .legend li {
+        font-family: var(--mono);
+        font-size: 0.6875rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-dim);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .swatch {
+        width: 1.5rem;
+        height: 2px;
+        background: var(--tone);
+        flex: none;
+      }
+
+      .legend .half .swatch {
+        background: repeating-linear-gradient(
+          to right,
+          var(--tone) 0 0.36em,
+          transparent 0.36em 0.62em
+        );
+      }
+
+      /* ---- thesis ---- */
+
+      .thesis {
+        margin: clamp(4rem, 13vh, 6.5rem) 0 0;
+        max-width: 32rem;
+      }
+
+      .thesis p {
+        margin: 0 0 1.1rem;
+      }
+
+      .thesis .claim {
+        font-size: 1.35rem;
+        line-height: 1.4;
+        letter-spacing: -0.012em;
+      }
+
+      .thesis .detail {
+        color: var(--ink-dim);
+        font-size: 1rem;
+      }
+
+      /* ---- release ---- */
+
+      .release {
+        margin: clamp(3.5rem, 11vh, 5.5rem) 0 0;
+      }
+
+      .badge {
+        display: block;
+        height: 42px;
+        width: auto;
+      }
+
+      .badge.on-dark {
+        display: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .badge.on-light {
+          display: none;
+        }
+        .badge.on-dark {
+          display: block;
+        }
+      }
+
+      .release .label {
+        margin-top: 0.9rem;
+      }
+
+      /* ---- footer ---- */
 
       footer {
-        margin-top: 4rem;
+        margin-top: clamp(4rem, 12vh, 6rem);
         padding-top: 1.5rem;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 0.9rem;
-        text-align: center;
+        border-top: 1px solid var(--rule);
       }
 
       footer p {
-        margin: 0.75rem 0;
+        margin: 0;
+        font-family: var(--mono);
+        font-size: 0.6875rem;
+        letter-spacing: 0.08em;
+        color: var(--ink-dim);
+        line-height: 2;
       }
 
-      .back-link {
-        display: inline-block;
-        margin-bottom: 2rem;
-        font-size: 0.9rem;
+      a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 1px;
+      }
+
+      a:hover {
+        border-bottom-color: var(--miss);
+        color: var(--ink);
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--miss);
+        outline-offset: 3px;
+        border-radius: 1px;
+      }
+
+      .sep {
+        color: var(--rule);
+        padding: 0 0.4rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .chunk::after {
+          animation: none;
+          transform: scaleX(1);
+        }
       }
     </style>
   </head>
   <body>
-    <main class="wrap">
-      <header>
-        <p class="eyebrow">Broken English</p>
-        <h1>Parler anglais, pour de vrai</h1>
-        <p class="lede">
-          Une app iOS qui t'entraîne à parler anglais à voix haute, en situation réelle.
-        </p>
-      </header>
+    <main>
+      <p class="label masthead">Broken English</p>
 
-      <div class="content">
-        <p>
-          Des situations concrètes, une consigne, et à toi de parler. Pas de QCM, pas de texte à
-          recopier : tu dis la phrase à voix haute, comme tu le ferais avec quelqu'un en face.
+      <p class="label context">Situation <span class="sep">·</span> Reporter une réunion</p>
+
+      <p class="utterance">
+        <span class="chunk said" style="--i: 0">Could you</span>
+        <span class="chunk miss" style="--i: 1">push</span>
+        <span class="chunk said" style="--i: 2">our meeting</span>
+        <span class="chunk half is-half" style="--i: 3">to Thursday</span>?
+      </p>
+
+      <ul class="legend">
+        <li class="said"><span class="swatch"></span>Dit</li>
+        <li class="half"><span class="swatch"></span>À moitié</li>
+        <li class="miss"><span class="swatch"></span>Manqué</li>
+      </ul>
+
+      <div class="thesis">
+        <p class="claim">
+          Ton anglais est cassé. Parle quand même : c'est la seule façon de le réparer.
         </p>
-        <p>
-          L'application fonctionne en français, italien et espagnol, pour coacher l'anglais. Et ta
-          voix n'en sort jamais : elle est traitée directement sur ton téléphone, jamais enregistrée,
-          jamais transmise.
+        <p class="detail">
+          L'app te met en situation, tu réponds à voix haute, elle marque chaque phrase. Ta voix est
+          traitée sur ton téléphone, jamais enregistrée, jamais transmise.
         </p>
       </div>
 
-      <div class="cta">
-        <p><strong>Bientôt sur l'App Store</strong></p>
+      <div class="release">
+        <img
+          class="badge on-light"
+          src="assets/app-store-badge-fr-black.svg"
+          alt="Télécharger dans l'App Store"
+          width="127"
+          height="42"
+        />
+        <img
+          class="badge on-dark"
+          src="assets/app-store-badge-fr-white.svg"
+          alt="Télécharger dans l'App Store"
+          width="127"
+          height="42"
+        />
+        <p class="label">Bientôt <span class="sep">·</span> iOS <span class="sep">·</span> fr it es</p>
       </div>
 
       <footer>
         <p>
-          <a href="/privacy.html">Politique de confidentialité</a> ·
-          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Conditions d'utilisation</a>
+          <a href="/privacy.html">Confidentialité</a>
+          <span class="sep">·</span>
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Conditions</a>
+          <span class="sep">·</span>
+          <a href="mailto:support@brokenenglish.app">support@brokenenglish.app</a>
         </p>
-        <p>
-          Pierre Antoine CRUZ ·
-          <a href="mailto:contact@pierrecruz.com">contact@pierrecruz.com</a>
-        </p>
+        <p>Pierre Antoine Cruz</p>
       </footer>
     </main>
   </body>
