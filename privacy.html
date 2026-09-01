@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Politique de confidentialité — Broken English</title>
+    <meta
+      name="description"
+      content="Politique de confidentialité de l'application Broken English : quelles données sont collectées, pourquoi, où elles vont et combien de temps elles sont conservées."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fdfaf8;
+        --surface: #ffffff;
+        --text: #1c1917;
+        --muted: #6b6360;
+        --line: #e7e0dc;
+        --accent: #ca6141;
+        --accent-soft: #fdefe9;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #16130f;
+          --surface: #1f1b17;
+          --text: #f2ede9;
+          --muted: #a89f99;
+          --line: #332d28;
+          --accent: #e7834c;
+          --accent-soft: #2a201a;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica,
+          Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      .wrap {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 5rem;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin: 0 0 0.75rem;
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 5vw, 2.6rem);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.75rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        letter-spacing: -0.01em;
+        margin: 3rem 0 0.75rem;
+        padding-top: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1.02rem;
+        margin: 1.75rem 0 0.4rem;
+      }
+
+      p,
+      li {
+        color: var(--text);
+      }
+
+      .lede {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin: 0;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 1.25rem 0 0;
+      }
+
+      ul {
+        padding-left: 1.2rem;
+      }
+
+      li {
+        margin: 0.4rem 0;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
+
+      .callout {
+        background: var(--accent-soft);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 8px 8px 0;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+      }
+
+      .callout p {
+        margin: 0.4rem 0;
+      }
+
+      .callout p:first-child {
+        margin-top: 0;
+      }
+
+      .callout p:last-child {
+        margin-bottom: 0;
+      }
+
+      .scroll {
+        overflow-x: auto;
+        margin: 1.25rem 0;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--surface);
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        min-width: 34rem;
+        font-size: 0.94rem;
+      }
+
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 0.7rem 0.9rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      th {
+        font-weight: 650;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 650;
+        padding: 0.12rem 0.5rem;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+
+      .tag-local {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+
+      .tag-server {
+        background: var(--line);
+        color: var(--muted);
+      }
+
+      footer {
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .back-to-home {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <a href="/" class="back-to-home">Broken English</a>
+        <p class="eyebrow">Politique</p>
+        <h1>Confidentialité</h1>
+        <p class="lede">
+          Broken English est une application qui t'entraîne à parler anglais à voix haute. Cette
+          page décrit exactement quelles données l'application manipule, pourquoi, où elles vont et
+          combien de temps elles sont gardées.
+        </p>
+        <p class="meta">
+          Dernière mise à jour : 2 septembre 2026 · Éditeur et responsable de traitement : Pierre
+          Antoine CRUZ · <a href="mailto:contact@pierrecruz.com">contact@pierrecruz.com</a>
+        </p>
+      </header>
+
+      <div class="callout">
+        <p><strong>L'essentiel, en trois phrases.</strong></p>
+        <p>
+          Ta voix ne quitte jamais l'application : rien de ce que tu dis n'est enregistré, ni stocké,
+          ni transmis à l'éditeur. L'application fonctionne par défaut avec un compte anonyme, sans
+          te demander la moindre coordonnée ; créer un compte identifié est facultatif. Il n'y a
+          aucune publicité, aucun outil de mesure d'audience et aucune revente de données.
+        </p>
+      </div>
+
+      <h2>1. Qui est responsable</h2>
+      <p>
+        Le responsable du traitement des données est <strong>Pierre Antoine CRUZ</strong>, éditeur de
+        l'application Broken English. Pour toute question relative à cette politique ou pour exercer
+        tes droits : <a href="mailto:contact@pierrecruz.com">contact@pierrecruz.com</a>.
+      </p>
+
+      <h2>2. Ton compte</h2>
+      <p>
+        Au premier lancement, l'application crée automatiquement un <strong>compte anonyme</strong>.
+        Aucune information ne t'est demandée : ce compte est un simple identifiant technique (un
+        UUID, une suite de caractères aléatoires) que rien ne relie à ton identité, à ton téléphone
+        ou à ton compte Apple. Tu peux utiliser toute l'application ainsi, sans jamais donner la
+        moindre coordonnée.
+      </p>
+      <p>
+        Ce compte sert uniquement à conserver ton historique de pratique et ta série de jours. Tant
+        qu'il reste anonyme, il est <strong>lié à une seule installation</strong> : si tu
+        désinstalles l'application ou changes de téléphone, un nouveau compte anonyme est créé et
+        l'historique précédent n'est plus accessible.
+      </p>
+
+      <h3>Créer un compte identifié (facultatif)</h3>
+      <p>
+        Pour retrouver ta progression sur un autre appareil ou après une réinstallation, tu peux
+        rattacher ton compte anonyme à une identité, de deux manières :
+      </p>
+      <ul>
+        <li>
+          <strong>Adresse email et mot de passe.</strong> L'application enregistre alors ton adresse
+          email. Ton mot de passe n'est jamais stocké tel quel : il est conservé sous forme
+          chiffrée et irréversible par Supabase, le service d'authentification. Un email peut t'être
+          envoyé pour confirmer ton adresse ou réinitialiser ton mot de passe.
+        </li>
+        <li>
+          <strong>Connexion avec Apple.</strong> Apple confirme ton identité et transmet à
+          l'application un identifiant ainsi que ton adresse email. Si tu choisis l'option
+          « Masquer mon adresse email », Apple ne transmet qu'une adresse relais anonyme
+          (<em>@privaterelay.appleid.com</em>) : l'éditeur ne connaît alors pas ta véritable adresse.
+        </li>
+      </ul>
+      <p>
+        Ces informations servent exclusivement à te reconnecter à ton propre historique et, le cas
+        échéant, à te répondre si tu écris à l'adresse de contact. Elles ne servent pas à t'envoyer
+        de la publicité ni des messages commerciaux, et ne sont transmises à personne d'autre.
+      </p>
+
+      <h2>3. Ta voix reste sur ton téléphone</h2>
+      <p>
+        C'est le point le plus important, et c'est une contrainte inscrite dans la conception même de
+        l'application.
+      </p>
+      <ul>
+        <li>
+          <strong>Aucun enregistrement audio n'est conservé.</strong> Le micro sert uniquement à
+          écouter ta phrase pendant l'exercice, en direct.
+        </li>
+        <li>
+          <strong>Aucune transcription n'est enregistrée.</strong> Le texte de ce que tu dis est
+          utilisé en mémoire, le temps de vérifier si ton message est passé, puis il disparaît. La
+          base de données ne comporte volontairement <em>aucune colonne</em> destinée à stocker une
+          transcription.
+        </li>
+        <li>
+          <strong>Rien de tout cela n'est transmis à l'éditeur</strong>, ni à un serveur lui
+          appartenant.
+        </li>
+      </ul>
+      <p>
+        Seul le <strong>résultat</strong> de l'exercice est conservé : « réussi », « partiellement
+        réussi » ou « manqué », ainsi que la manière dont la consigne a été traitée (tentative ou
+        répétition). C'est ce qui permet de calculer ta progression et ta série de jours.
+      </p>
+
+      <h3>Le rôle d'Apple dans la reconnaissance vocale</h3>
+      <p>
+        Pour transformer ta parole en texte, l'application utilise la
+        <strong>reconnaissance vocale intégrée à ton système d'exploitation</strong> — sur iPhone, il
+        s'agit du service de reconnaissance vocale d'Apple. Selon ton modèle d'appareil, sa version
+        d'iOS et tes réglages, ce traitement peut avoir lieu directement sur l'appareil ou bien
+        <strong>être effectué sur les serveurs d'Apple</strong>. Cette étape est régie par la
+        politique de confidentialité d'Apple, sur laquelle l'éditeur n'a pas la main. C'est aussi la
+        raison pour laquelle iOS te demande une autorisation distincte pour le micro et pour la
+        reconnaissance vocale.
+      </p>
+      <p>
+        De la même manière, la voix qui prononce les phrases en anglais est la synthèse vocale de ton
+        système : aucun fichier audio de voix n'est téléchargé depuis un serveur de l'éditeur.
+      </p>
+
+      <h2>4. Les données que l'application traite</h2>
+      <p>
+        <span class="tag tag-local">Téléphone</span> = la donnée ne quitte pas ton appareil.
+        <span class="tag tag-server">Serveur</span> = la donnée est aussi enregistrée sur le serveur,
+        rattachée à ton identifiant anonyme.
+      </p>
+
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Donnée</th>
+              <th>Pourquoi</th>
+              <th>Où</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ta voix et sa transcription</td>
+              <td>Vérifier en direct que ta phrase passe</td>
+              <td><span class="tag tag-local">Téléphone</span> — jamais conservée</td>
+            </tr>
+            <tr>
+              <td>Identifiant de compte anonyme</td>
+              <td>Rattacher ton historique à toi, sans savoir qui tu es</td>
+              <td><span class="tag tag-server">Serveur</span></td>
+            </tr>
+            <tr>
+              <td>
+                Adresse email et mot de passe chiffré, <em>ou</em> identifiant Apple et adresse
+                (éventuellement relais) — uniquement si tu crées un compte identifié
+              </td>
+              <td>
+                Te permettre de retrouver ta progression sur un autre appareil, et te répondre si tu
+                nous écris
+              </td>
+              <td><span class="tag tag-server">Serveur</span></td>
+            </tr>
+            <tr>
+              <td>
+                Réponses d'installation : prénom (ou surnom) que tu choisis, langue de l'interface,
+                objectifs, niveau déclaré, tranche d'âge, genre, rythme de pratique
+              </td>
+              <td>Adapter les situations proposées et te parler par ton prénom</td>
+              <td><span class="tag tag-server">Serveur</span></td>
+            </tr>
+            <tr>
+              <td>
+                Historique de pratique : situation travaillée, résultat par consigne (réussi /
+                partiel / manqué), date et heure de début et de fin, date locale et fuseau horaire
+              </td>
+              <td>Calculer ta progression et ta série de jours consécutifs</td>
+              <td><span class="tag tag-server">Serveur</span></td>
+            </tr>
+            <tr>
+              <td>Préférence de rappel : rappel activé ou non, heure choisie</td>
+              <td>Programmer le rappel quotidien sur ton appareil</td>
+              <td><span class="tag tag-server">Serveur</span></td>
+            </tr>
+            <tr>
+              <td>Catalogue de situations et de consignes, images associées</td>
+              <td>Afficher le contenu de l'application, même hors connexion</td>
+              <td>
+                Téléchargé depuis le serveur puis mis en cache
+                <span class="tag tag-local">Téléphone</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Statut d'abonnement (actif ou non)</td>
+              <td>Débloquer les contenus payants</td>
+              <td>Géré par Apple et RevenueCat (voir §6)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Tu n'es jamais obligé de donner ton vrai prénom : ce champ sert uniquement à personnaliser
+        les textes affichés dans l'application.
+      </p>
+
+      <h2>5. Notifications</h2>
+      <p>
+        Si tu l'acceptes, l'application programme un <strong>rappel quotidien</strong> à l'heure que
+        tu as choisie. Ces rappels sont <strong>locaux</strong> : ils sont déclenchés par ton
+        téléphone lui-même. Aucun serveur ne t'envoie de notification push, et aucun jeton de
+        notification n'est collecté ni transmis. Tu peux refuser l'autorisation, ou la retirer à tout
+        moment dans les réglages de ton téléphone : le reste de l'application continue de
+        fonctionner.
+      </p>
+
+      <h2>6. Abonnement et paiement</h2>
+      <p>
+        Broken English propose un abonnement payant. <strong>Aucune donnée bancaire ne transite par
+        l'application</strong> ni par ses serveurs : le paiement est intégralement traité par
+        l'App Store d'Apple, selon les conditions et la politique de confidentialité d'Apple.
+      </p>
+      <p>
+        L'application utilise <strong>RevenueCat</strong> pour savoir si ton abonnement est actif.
+        RevenueCat reçoit d'Apple les informations relatives à ton achat (produit acheté, dates de
+        début et de renouvellement, statut) et les rattache à un identifiant anonyme qu'il génère
+        lui-même. L'application ne lui transmet ni ton prénom, ni tes réponses d'installation, ni ton
+        historique de pratique. À ce jour, l'abonnement n'est disponible que sur iOS.
+      </p>
+
+      <h2>7. Les services tiers réellement utilisés</h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Rôle</th>
+              <th>Ce qu'il reçoit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Supabase</strong></td>
+              <td>
+                Base de données, authentification (compte anonyme ou identifié) et envoi des emails
+                de confirmation ou de réinitialisation
+              </td>
+              <td>
+                Identifiant de compte, réponses d'installation, historique de pratique, préférence de
+                rappel, et — si tu crées un compte identifié — ton adresse email et ton mot de passe
+                chiffré
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Apple</strong> (App Store, Sign in with Apple)</td>
+              <td>
+                Distribution de l'application, paiement de l'abonnement et, si tu la choisis,
+                connexion avec ton compte Apple
+              </td>
+              <td>Les données liées à ton compte Apple et à ton achat, selon ses propres règles</td>
+            </tr>
+            <tr>
+              <td><strong>Apple</strong> (iOS)</td>
+              <td>Reconnaissance vocale et synthèse vocale du système</td>
+              <td>
+                Ta parole, le temps de la transcrire — éventuellement traitée sur ses serveurs (§3)
+              </td>
+            </tr>
+            <tr>
+              <td><strong>RevenueCat</strong></td>
+              <td>Suivi du statut d'abonnement</td>
+              <td>Un identifiant anonyme et les informations d'achat transmises par Apple</td>
+            </tr>
+            <tr>
+              <td><strong>Expo</strong> (EAS)</td>
+              <td>Construction et distribution des mises à jour de l'application</td>
+              <td>Aucune donnée personnelle d'utilisateur</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <p>
+          <strong>Il n'y a rien d'autre.</strong> Aucun outil de mesure d'audience ou d'analyse de
+          comportement, aucun outil de suivi des erreurs, aucune régie publicitaire, aucun réseau
+          social, aucun pixel de traçage. Tes données ne sont ni vendues, ni louées, ni échangées.
+        </p>
+      </div>
+
+      <h2>8. Où sont hébergées les données</h2>
+      <p>
+        Les données enregistrées sur le serveur sont hébergées par Supabase, dans l'Union européenne
+        (région <em>eu-west-1</em>, Irlande). Elles sont protégées par des règles de sécurité au
+        niveau de chaque ligne de la base : ton identifiant anonyme est le seul à pouvoir lire et
+        écrire ses propres données.
+      </p>
+      <p>
+        Le recours à la reconnaissance vocale d'Apple et à l'App Store peut impliquer un transfert
+        hors de l'Union européenne, encadré par les garanties propres à Apple. Il en va de même pour
+        RevenueCat, société américaine.
+      </p>
+
+      <h2>9. Durée de conservation</h2>
+      <ul>
+        <li>
+          <strong>Ta voix et ses transcriptions :</strong> le temps de l'exercice, en mémoire vive.
+          Jamais écrites sur disque, jamais transmises.
+        </li>
+        <li>
+          <strong>Réponses d'installation et historique de pratique :</strong> conservés tant que ton
+          compte anonyme existe, c'est-à-dire tant que tu utilises l'application. Ces données n'ont
+          d'intérêt que pour afficher ta progression dans le temps.
+        </li>
+        <li>
+          <strong>Données stockées sur le téléphone</strong> (copie locale de l'historique, cache du
+          catalogue, session) : supprimées immédiatement et définitivement lorsque tu désinstalles
+          l'application.
+        </li>
+        <li>
+          <strong>Adresse email et données de connexion :</strong> conservées tant que ton compte
+          identifié existe. Leur suppression entraîne celle de ton historique.
+        </li>
+        <li>
+          <strong>Après une désinstallation, si ton compte est resté anonyme :</strong> les données
+          restées sur le serveur ne peuvent plus être rattachées à toi ni consultées par personne.
+          Tu peux en demander la suppression définitive par email, à condition de pouvoir communiquer
+          ton identifiant de compte.
+        </li>
+        <li>
+          <strong>Données d'abonnement :</strong> conservées par Apple et RevenueCat selon leurs
+          propres durées, notamment pour des raisons comptables et légales.
+        </li>
+      </ul>
+
+      <h2>10. Tes droits</h2>
+      <p>
+        Conformément au Règlement général sur la protection des données (RGPD), tu disposes d'un
+        droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité
+        sur les données qui te concernent. Tu peux les exercer en écrivant à
+        <a href="mailto:contact@pierrecruz.com">contact@pierrecruz.com</a>.
+      </p>
+      <p>
+        Si tu as créé un compte identifié, écris depuis l'adresse email associée : cela suffit à
+        traiter ta demande. Une précision honnête en revanche pour les comptes restés
+        <strong>anonymes</strong> : l'éditeur n'a alors aucun moyen de savoir quelle ligne de la base
+        t'appartient. Pour qu'une demande puisse aboutir, il faut nous transmettre ton identifiant de
+        compte. C'est le prix de l'anonymat, et c'est un compromis assumé.
+      </p>
+      <p>
+        Tu peux également introduire une réclamation auprès de la Commission nationale de
+        l'informatique et des libertés (CNIL), <a href="https://www.cnil.fr">www.cnil.fr</a>.
+      </p>
+
+      <h2>11. Enfants</h2>
+      <p>
+        Broken English n'est pas destinée aux enfants de moins de 13 ans et ne collecte pas sciemment
+        de données les concernant.
+      </p>
+
+      <h2>12. Modifications</h2>
+      <p>
+        Cette politique peut évoluer si l'application évolue — par exemple si un nouveau service
+        tiers est ajouté, ou si de nouvelles données deviennent nécessaires. La date de dernière mise
+        à jour figure en haut de cette page.
+      </p>
+
+      <h2>13. Conditions d'utilisation</h2>
+      <p>
+        L'utilisation de Broken English est régie par le contrat de licence utilisateur final type
+        d'Apple :
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+          >Licensed Application End User License Agreement</a
+        >. L'éditeur n'y substitue aucune condition particulière.
+      </p>
+      <p>
+        Les modalités de l'abonnement — durée, prix, renouvellement automatique et résiliation — sont
+        affichées dans l'application avant tout achat et gérées depuis les réglages de ton compte
+        Apple.
+      </p>
+
+      <footer>
+        <p>
+          Broken English — Éditeur et responsable de traitement : Pierre Antoine CRUZ ·
+          <a href="mailto:contact@pierrecruz.com">contact@pierrecruz.com</a>
+        </p>
+        <p>
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+            >Conditions d'utilisation (EULA Apple)</a
+          >
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

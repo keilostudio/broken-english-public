@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brokenenglish.app/sitemap.xml
