@@ -85,7 +85,7 @@
       }
 
       .masthead {
-        margin-bottom: clamp(4rem, 14vh, 7rem);
+        margin-bottom: clamp(5rem, 18vh, 9rem);
       }
 
       .context {
@@ -95,9 +95,9 @@
       /* ---- the utterance: what a person says, in serif ---- */
 
       .utterance {
-        font-size: clamp(2rem, 7.5vw, 3.4rem);
-        line-height: 1.22;
-        letter-spacing: -0.022em;
+        font-size: clamp(2.4rem, 8.6vw, 4.4rem);
+        line-height: 1.14;
+        letter-spacing: -0.026em;
         margin: 0;
         text-wrap: balance;
       }
@@ -112,9 +112,9 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -0.14em;
-        height: 0.055em;
-        min-height: 2px;
+        bottom: -0.2em;
+        height: 0.062em;
+        min-height: 3px;
         background: var(--tone);
         transform: scaleX(0);
         transform-origin: left center;
@@ -134,11 +134,18 @@
       .said {
         --tone: var(--said);
       }
+      /* what you only half said, and what never came out, fade in the sentence itself */
       .half {
         --tone: var(--half);
       }
+      .utterance .half {
+        opacity: 0.72;
+      }
       .miss {
         --tone: var(--miss);
+      }
+      .utterance .miss {
+        opacity: 0.45;
       }
 
       @keyframes mark {
@@ -153,7 +160,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 1.25rem;
-        margin: 2.5rem 0 0;
+        margin: 3rem 0 0;
         padding: 0;
         list-style: none;
       }
@@ -271,7 +278,7 @@
       }
 
       .sep {
-        color: var(--rule);
+        opacity: 0.45;
         padding: 0 0.4rem;
       }
 
