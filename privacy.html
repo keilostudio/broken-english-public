@@ -9,26 +9,49 @@
       content="Politique de confidentialité de l'application Broken English : quelles données sont collectées, pourquoi, où elles vont et combien de temps elles sont conservées."
     />
     <style>
+      /* Inter, the app's family, served from this origin. SIL Open Font License. */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('assets/fonts/inter-latin-400.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('assets/fonts/inter-latin-600.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('assets/fonts/inter-latin-700.woff2') format('woff2');
+      }
+
       :root {
         color-scheme: light dark;
-        --bg: #edefe9;
-        --surface: #e5e8e0;
-        --text: #191d18;
-        --muted: #6a7168;
-        --line: #d5d9cf;
-        --accent: #cf3b2a;
-        --accent-soft: #e5e8e0;
+        --bg: #f5f7fa; /* color.mist */
+        --surface: #ffffff; /* color.surfaceCard */
+        --text: #111827; /* color.textBody */
+        --muted: #647184; /* color.textMuted */
+        --line: #e3e7ee; /* color.borderDefault */
+        --accent: #364f6b; /* color.textLink */
+        --accent-soft: #eef4fb; /* color.blueSoft */
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #131611;
-          --surface: #1a1e18;
-          --text: #e9ebe4;
-          --muted: #868d83;
-          --line: #2a2e27;
-          --accent: #e8614d;
-          --accent-soft: #1a1e18;
+          --bg: #0f1621;
+          --surface: #1a2330;
+          --text: #f2f5f9;
+          --muted: #8494a8;
+          --line: #2a3547;
+          --accent: #a9c7e7;
+          --accent-soft: #1c2839;
         }
       }
 
@@ -40,8 +63,8 @@
         margin: 0;
         background: var(--bg);
         color: var(--text);
-        font-family: ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia,
-          'Times New Roman', serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+          Arial, sans-serif;
         font-size: 17px;
         line-height: 1.65;
         -webkit-text-size-adjust: 100%;
