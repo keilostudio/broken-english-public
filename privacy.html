@@ -402,8 +402,13 @@
               <td><span class="tag tag-server">Serveur</span></td>
             </tr>
             <tr>
+              <td>Formule d'abonnement sélectionnée dans l'application</td>
+              <td>Te réafficher ton choix si tu reviens sur l'écran d'abonnement</td>
+              <td><span class="tag tag-server">Serveur</span></td>
+            </tr>
+            <tr>
               <td>Préférence de rappel : rappel activé ou non, heure choisie</td>
-              <td>Programmer le rappel quotidien sur ton appareil</td>
+              <td>Programmer le rappel quotidien sur ton appareil (voir §5)</td>
               <td><span class="tag tag-server">Serveur</span></td>
             </tr>
             <tr>
@@ -430,12 +435,31 @@
 
       <h2>5. Notifications</h2>
       <p>
-        Si tu l'acceptes, l'application programme un <strong>rappel quotidien</strong> à l'heure que
-        tu as choisie. Ces rappels sont <strong>locaux</strong> : ils sont déclenchés par ton
-        téléphone lui-même. Aucun serveur ne t'envoie de notification push, et aucun jeton de
-        notification n'est collecté ni transmis. Tu peux refuser l'autorisation, ou la retirer à tout
-        moment dans les réglages de ton téléphone : le reste de l'application continue de
-        fonctionner.
+        Si tu l'acceptes, l'application programme deux sortes de notifications. Toutes deux sont
+        <strong>locales</strong> : elles sont déclenchées par ton téléphone lui-même. Aucun serveur
+        ne t'envoie de notification push, et aucun jeton de notification n'est collecté ni transmis.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Le rappel quotidien de pratique</strong>, à l'heure que tu as choisie pendant
+          l'installation. Il n'est programmé que pendant que ton abonnement est actif : si ton
+          abonnement se termine, le rappel s'arrête de lui-même.
+        </li>
+        <li>
+          <strong>Un avertissement avant la fin de l'essai gratuit</strong>, deux jours avant que
+          ton abonnement ne soit débité pour la première fois, pour que tu puisses l'arrêter avant.
+          Il est programmé au moment où l'essai commence, et annulé si l'abonnement prend fin.
+        </li>
+      </ul>
+
+      <p>
+        L'heure choisie et l'état de ton essai suffisent à les programmer : rien d'autre n'est
+        transmis, et l'identifiant technique de chaque notification programmée reste sur ton
+        téléphone, dans la base locale de l'application. Tu peux refuser l'autorisation, ou la
+        retirer à tout moment dans les réglages de ton téléphone : le reste de l'application
+        continue de fonctionner, et les mentions d'abonnement affichées à l'écran s'ajustent pour ne
+        plus te promettre d'avertissement que l'application ne pourrait pas t'envoyer.
       </p>
 
       <h2>6. Abonnement et paiement</h2>
@@ -538,8 +562,8 @@
         </li>
         <li>
           <strong>Données stockées sur le téléphone</strong> (copie locale de l'historique, cache du
-          catalogue, session) : supprimées immédiatement et définitivement lorsque tu désinstalles
-          l'application.
+          catalogue, session, identifiants techniques des notifications programmées) : supprimées
+          immédiatement et définitivement lorsque tu désinstalles l'application.
         </li>
         <li>
           <strong>Adresse email et données de connexion :</strong> conservées tant que ton compte
