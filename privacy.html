@@ -288,8 +288,7 @@
         <li>
           <strong>Adresse email et mot de passe.</strong> L'application enregistre alors ton adresse
           email. Ton mot de passe n'est jamais stocké tel quel : il est conservé sous forme
-          chiffrée et irréversible par Supabase, le service d'authentification. Un email peut t'être
-          envoyé pour confirmer ton adresse ou réinitialiser ton mot de passe.
+          chiffrée et irréversible par Supabase, le service d'authentification.
         </li>
         <li>
           <strong>Connexion avec Apple.</strong> Apple confirme ton identité et transmet à
@@ -299,9 +298,20 @@
         </li>
       </ul>
       <p>
-        Ces informations servent exclusivement à te reconnecter à ton propre historique et, le cas
-        échéant, à te répondre si tu écris à l'adresse de contact. Elles ne servent pas à t'envoyer
-        de la publicité ni des messages commerciaux, et ne sont transmises à personne d'autre.
+        Ces informations servent exclusivement à te reconnecter à ton propre historique — que ce soit
+        pour te renvoyer un code de vérification ou pour t'aider à récupérer l'accès à ton compte si
+        tu perds ton mot de passe — et, le cas échéant, à te répondre si tu écris à l'adresse de
+        contact. Elles ne servent pas à t'envoyer de la publicité ni des messages commerciaux, et ne
+        sont transmises à personne d'autre. Les emails de code de vérification et de réinitialisation
+        de mot de passe sont envoyés par <strong>Resend</strong>, le sous-traitant que l'application
+        utilise pour cet unique usage, depuis l'adresse <em>support@brokenenglish.app</em> et acheminés
+        depuis l'Union européenne (Irlande).
+      </p>
+      <p>
+        Créer un compte identifié ne change rien à la promesse du §3&nbsp;: ta voix ne quitte
+        toujours pas ton téléphone. Et à tout moment, depuis les réglages de l'application, tu peux
+        <strong>supprimer ton compte et toutes les données qui lui sont associées, immédiatement et
+        définitivement</strong> — que ton compte soit resté anonyme ou que tu l'aies identifié.
       </p>
 
       <h2>3. Ta voix reste sur ton téléphone</h2>
@@ -490,14 +500,21 @@
             <tr>
               <td><strong>Supabase</strong></td>
               <td>
-                Base de données, authentification (compte anonyme ou identifié) et envoi des emails
-                de confirmation ou de réinitialisation
+                Base de données et authentification (compte anonyme ou identifié)
               </td>
               <td>
                 Identifiant de compte, réponses d'installation, historique de pratique, préférence de
                 rappel, et — si tu crées un compte identifié — ton adresse email et ton mot de passe
                 chiffré
               </td>
+            </tr>
+            <tr>
+              <td><strong>Resend</strong></td>
+              <td>
+                Envoi des emails de code de vérification et de réinitialisation de mot de passe,
+                depuis <em>support@brokenenglish.app</em>
+              </td>
+              <td>Ton adresse email, et le contenu de l'email envoyé</td>
             </tr>
             <tr>
               <td><strong>Apple</strong> (App Store, Sign in with Apple)</td>
@@ -541,7 +558,8 @@
         Les données enregistrées sur le serveur sont hébergées par Supabase, dans l'Union européenne
         (région <em>eu-west-1</em>, Irlande). Elles sont protégées par des règles de sécurité au
         niveau de chaque ligne de la base : ton identifiant anonyme est le seul à pouvoir lire et
-        écrire ses propres données.
+        écrire ses propres données. Les emails envoyés par Resend (§2, §7) sont eux aussi acheminés
+        depuis l'Union européenne (Irlande).
       </p>
       <p>
         Le recours à la reconnaissance vocale d'Apple et à l'App Store peut impliquer un transfert
@@ -570,10 +588,17 @@
           identifié existe. Leur suppression entraîne celle de ton historique.
         </li>
         <li>
+          <strong>Suppression du compte, à tout moment :</strong> les réglages de l'application
+          proposent un bouton de suppression, quel que soit l'état de ton compte (anonyme, ou
+          identifié par email ou par Apple). Elle est immédiate et définitive&nbsp;: ton compte, ton
+          historique de pratique et tes réponses d'installation sont effacés du serveur, sans passer
+          par une demande écrite.
+        </li>
+        <li>
           <strong>Après une désinstallation, si ton compte est resté anonyme :</strong> les données
-          restées sur le serveur ne peuvent plus être rattachées à toi ni consultées par personne.
-          Tu peux en demander la suppression définitive par email, à condition de pouvoir communiquer
-          ton identifiant de compte.
+          restées sur le serveur ne peuvent plus être rattachées à toi ni consultées par personne,
+          faute d'identifiant retrouvable. Si tu avais identifié ton compte, écris-nous depuis
+          l'adresse email associée pour en demander la suppression a posteriori.
         </li>
         <li>
           <strong>Données d'abonnement :</strong> conservées par Apple et RevenueCat selon leurs
